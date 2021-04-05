@@ -11,21 +11,11 @@ const RequestContextProvider = (props) => {
 
   const ipLookUp = async () => {
     const ipData = await axios
-      .get("https://checkip.amazonaws.com/", {
-        headers: {
-          "Access-Control-Allow-Origin":
-            "https://elated-fermat-1bdef7.netlify.app/",
-        },
-      })
+      .get("http://checkip.amazonaws.com/")
       .then((res) => res.data);
 
     const countryCode = await axios
-      .get(`https://ip-api.com/json/${ipData}`, {
-        headers: {
-          "Access-Control-Allow-Origin":
-            "https://elated-fermat-1bdef7.netlify.app/",
-        },
-      })
+      .get(`http://ip-api.com/json/${ipData}`)
       .then((res) => res.data.countryCode);
 
     return countryCode;
