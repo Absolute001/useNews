@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { RequestContext } from "../context/axios";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -20,7 +20,6 @@ const NewsTile = (props) => {
     "bg-blue-600",
   ];
 
-  let history = useHistory();
   const { requestSingleArticle } = useContext(RequestContext);
 
   return (
