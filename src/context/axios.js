@@ -13,7 +13,8 @@ const RequestContextProvider = (props) => {
     const ipData = await axios
       .get("https://checkip.amazonaws.com/", {
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Origin":
+            "https://elated-fermat-1bdef7.netlify.app/",
         },
       })
       .then((res) => res.data);
@@ -21,7 +22,8 @@ const RequestContextProvider = (props) => {
     const countryCode = await axios
       .get(`https://ip-api.com/json/${ipData}`, {
         headers: {
-          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Origin":
+            "https://elated-fermat-1bdef7.netlify.app/",
         },
       })
       .then((res) => res.data.countryCode);
