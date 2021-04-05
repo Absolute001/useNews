@@ -11,7 +11,11 @@ const RequestContextProvider = (props) => {
 
   const ipLookUp = async () => {
     const ipData = await axios
-      .get("https://checkip.amazonaws.com/")
+      .get("https://checkip.amazonaws.com/", {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
       .then((res) => res.data);
 
     const countryCode = await axios
