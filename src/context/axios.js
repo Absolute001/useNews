@@ -19,7 +19,11 @@ const RequestContextProvider = (props) => {
       .then((res) => res.data);
 
     const countryCode = await axios
-      .get(`https://ip-api.com/json/${ipData}`)
+      .get(`https://ip-api.com/json/${ipData}`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
       .then((res) => res.data.countryCode);
 
     return countryCode;
