@@ -11,12 +11,14 @@ const RequestContextProvider = (props) => {
 
   const ipLookUp = async () => {
     const ipData = await axios
-      .get("http://checkip.amazonaws.com/")
+      .get("https://checkip.amazonaws.com/")
       .then((res) => res.data);
 
     const countryCode = await axios
-      .get(`http://ip-api.com/json/${ipData}`)
-      .then((res) => res.data.countryCode);
+      .get(
+        `https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_GEOLOCATION_KEY}&ip=${ipData}`
+      )
+      .then((res) => res.data.country_code2);
 
     return countryCode;
   };
