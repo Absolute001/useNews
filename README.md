@@ -1,3 +1,8 @@
+ATTENTION!!!!!
+In order to use this app you need a valid API Key from https://newsapi.org/
+Just replace the valu in the .env.example
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
